@@ -1,7 +1,149 @@
-<html>
-<head>
-</head>
-<body>
-<p>Free-Fi patent</p>
-</body>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Free-Fi TERMS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Free-Fi.Org</h1>
+      <h2 class="project-tagline">Free SECURE open Wi-Fi</h2>
+    </section>
+
+    <section class="main-content">
+      <h3>Free-Fi provisional patent (DRAFT)</h3>
+      <h3>Invention to automatically connect to networks using information from other systems</h3>
+<ol>
+<li>Connection to secondary network through open network</li>
+<ol>
+<li>Process</li>
+<ol>
+<li>Device D not connected to any network</li>
+<li>Device D detects an Open Network O not requiring any authorization information (e.g. passord, etc)</li>
+<li>Device D attempts to connect to Open Network O</li>
+<li>Open Network O sends authorization information needed to connect to secondary Secure Network S</li>
+<li>Device D connects to Secure Network S</li>
+</ol>
+<li>Notes:</li>
+<ol>
+<li>Device D could be any device capable of connecting to a network such as a laptop, desktop PC, etc.</li>
+<li>Open Network O and Secure Network S can be any type of network such as Wi-Fi, Bluetooth, wireless USB, Ethernet, near field communications, cellular, SMS, etc.</li>
+<li>Open Network O and Secure Network S can be different types of networks</li>
+<li>Device D does not have to disconnect from Open Network O &nbsp;to connect to Secure Network S</li>
+<li>The Open Network O does not need to allow full connection to respond with authorization information</li>
+<li>The Open Network O could respond with authorization information in multiple ways such as header information instead of a full web page, in packet data, voice or text message, etc.</li>
+<li>The Open Network O could request authentication from Device D (such as an email address, user ID, MAC address, etc) to verify before replying with authorization information for the Secure Network S</li>
+<li>The Open Network O could respond with the same authorization information for all requests or provide different authorization information, even different network IDs</li>
+</ol>
+<li>Examples</li>
+<ol>
+<li>Open Wi-Fi to Secure Wi-Fi</li>
+<ol>
+<li>Device D is a mobile phone that connects to an Open Wi-Fi network</li>
+<li>The Open Wi-Fi network redirects all web access to a web page that displays the SSID and password for secondary hidden Secure Wi-Fi network</li>
+<li>The mobile phone collects the SSID and password from the webpage</li>
+<li>The mobile phone then disconnects from the Open Wi-Fi network</li>
+<li>The mobile phone then connects to the Secure Wi-Fi network</li>
+</ol>
+<li>Open Wi-Fi to Secure Wi-Fi (with authentication)</li>
+<ol>
+<li>Device D is a mobile phone that connects to an Open Wi-Fi network</li>
+<li>The Open Wi-Fi network redirects all web access to a web page that requests authentication (email, MAC address, etc) from the wireless phone</li>
+<li>The Open Wi-Fi network verifies the authentication information, then displays the SSID and password for secondary hidden Secure Wi-Fi network specific for that user (for example using a RADIX, LDAP, or similar service)</li>
+<li>The mobile phone collects the SSID and password from the webpage</li>
+<li>The mobile phone then disconnects from the Open Wi-Fi network</li>
+<li>The mobile phone then connects to the Secure Wi-Fi network</li>
+</ol>
+<li>Cellular message to Secure Wi-Fi</li>
+<ol>
+<li>Device D is a mobile phone that connects to a cellular network</li>
+<li>The mobile phone receives a message (SMS or email) with an SSID and password for a Secure Wi-Fi network</li>
+<li>The mobile phone connects to the Secure Wi-Fi network</li>
+</ol>
+<li>Shared near field or bluetooth data between devices</li>
+<ol>
+<li>Device L is a laptop that is connected to a Secure Wi-Fi network</li>
+<li>Device D is a mobile phone that gets the SSID and password for the Secure Wi-Fi network from Device L through near field or bluetooth communication</li>
+<li>The mobile phone connects to the Secure Wi-Fi network</li>
+</ol>
+<li>Secure Wi-Fi to secondary Secure Wi-Fi</li>
+<ol>
+<li>Device D is a mobile phone that is connected to a Secure Wi-Fi network</li>
+<li>The mobile phone upon request for a web page may receive a response with SSIDs and passwords for other Secure Wi-Fi networks</li>
+<li>The mobile phone caches the authorization information</li>
+<li>The mobile phone then connects to secondary Secure Wi-Fi if disconnected from the first network</li>
+<ol>
+<li>The mobile phone could also connect to both networks at the same time if it has the capability</li>
+<li>The mobile phone may choose to connect to the secondary Secure Wi-Fi even if it is NOT disconnected from the original (for example: better signal, lower cost, greater bandwidth, etc)</li>
+</ol>
+</ol>
+</ol>
+</ol>
+<li>Connection to secure network with a deterministic authorization information</li>
+<ol>
+<li>Process</li>
+<ol>
+<li>Device D starts not connected to any network</li>
+<li>Device D detects an Secure Network S requiring authorization information</li>
+<li>Device D connects to Secure Network S with authorization information calculated from Secure Network S and/or Device D characteristics</li>
+</ol>
+<li>Notes</li>
+<ol>
+<li>The authorization information could constant or depend upon a previously agreed upon algorithm</li>
+<ol>
+<li>The algorithm could use information from Device D, Secure Network S, location, time, etc to determine the authorization information</li>
+<li>The examples given are simple, but the algorithm could use more complex methods to &nbsp;determine the authorization information such as a MD5 hash.</li>
+</ol>
+<li>There could be multiple ways to detect "Free-Fi" networks such as network name pattern (e.g. "Free-Fi", "Free-Fi#0001"), response packets, special headers, etc. &nbsp;&nbsp;&nbsp;</li>
+</ol>
+<li>Examples</li>
+<ol>
+<li>Constant Password for all requests</li>
+<ol>
+<li>Device D is a mobile phone that detects a secure Wi-Fi network named "Free-Fi"</li>
+<li>The mobile phones connects to the secure Wi-Fi network with the password "Free-Fi"</li>
+</ol>
+<li>Constant password plus date</li>
+<ol>
+<li>Device D is a mobile phone that detects a secure Wi-Fi network named "Free-Fi" on August 1st 2014(GMT)</li>
+<li>Device D connect to the secure Wi-Fi network with the password "Free-Fi$2014-08-01"</li>
+</ol>
+<li>'Hidden' SSID dependent upon date</li>
+<ol>
+<li>Device D is a mobile phone that does not detect any Wi-Fi network, but there is one 'hidden' because it is not broadcasting it's SSID</li>
+<li>On August 1st 2014 (GMT), the mobile phones looks for a Wi-Fi network with a specific SSID named "Free-Fi@2014-08-01"</li>
+<li>The mobile phone connects to the secure Wi-Fi with the password "Free-Fi"</li>
+</ol>
+<li>Password dependent upon secure network SSID </li>
+<ol>
+<li>Device D is a mobile phone that detects a secure Wi-Fi network named "Free-Fi#0001"</li>
+<li>The mobile phone connects to the secure Wi-Fi with the password "Free-Fi$0001"</li>
+</ol>
+<li>Password dependent upon Device D characteristics</li>
+<ol>
+<li>Device D is a mobile phone with a MAC address A1-B2-C3-D4-E5-F6 that detects a secure Wi-Fi network named "Free-Fi"</li>
+<li>The mobile phone connects to the secure Wi-Fi with the password "Free-Fi$ A1-B2-C3-D4-E5-F6"</li>
+</ol>
+</ol>
+</ol>
+</ol>
+</section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-70102025-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
 </html>
