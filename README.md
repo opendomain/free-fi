@@ -1,2 +1,2 @@
 # Free-Fi: Free open SECURE WiFi
-This is the gitHub repository for Free-Fi
+Free-Fi is a protocol to allow attomatic SECURE access to open wireless networks
